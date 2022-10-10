@@ -1,10 +1,10 @@
-
+import Card from "./assets/components/card"
 
 function App() {
 
   return (
    <>
-   Hello
+    <Card />
    </>
   )
 }

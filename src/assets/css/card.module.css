@@ -1,0 +1,68 @@
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    height: 90%;
+    width: 380px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=18, Direction=0, Color=#9E331E)";
+    -moz-box-shadow: -1px 0 18px 10px rgba(158,51,30,0.9);
+    -webkit-box-shadow: -1px 0 18px 10px rgba(158,51,30,0.9);
+    box-shadow: -1px 0 18px 10px rgba(158,51,30,0.9);
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=18, Direction=135, Color=#9E331E); 
+    border-radius: 10px;
+    
+}
+
+.welcome{
+    font-family: 'Oxygen', 'sans-serif';
+    word-wrap: break-word;
+    text-align: center;
+    color: rgb(216, 57, 25);;
+    word-break: break-all;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    gap: 80px;
+
+}
+
+h1{
+    font-size:larger;
+}
+
+input{
+    border-radius: 10px;
+    height: 50px;
+    font-size: larger;
+    border: transparent;
+    color: white;
+    text-align: center;
+    background-color:rgb(207, 32, 32);
+    
+}
+input:focus{
+    outline:2px solid rgb(216, 57, 25);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none !important;
+  margin: 0 !important;
+}
+
+.smallNote{
+    padding: 5px;
+}
+
+.playButton{
+    margin-top: 10px;
+    border: 1px solid red;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+}
