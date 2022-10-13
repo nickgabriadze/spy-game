@@ -1,17 +1,23 @@
 import cardStyles from '../css/card.module.css';
 import { useState } from 'react';
-export default function Card() {
 
+import { useAppDispatch } from '../store/store';
+import { setGameProcess, setPlayerInfo, setTimeDuration } from '../store/gameInfoReducer';
+
+export default function Card() {
+    const dispatch = useAppDispatch();
     const [time, setTime] = useState(2);
     const [confirm, setConfirm] = useState(false);
-    const [players, setPlayers] = useState(0);
+    const [players, setPlayers] = useState(3);
     const [spies, setSpies] = useState(1);
+    const [gameStarted, setGameStarted] = useState(false);
+    
     return (
         <>
             <div className={cardStyles.card}>
-                <div className={cardStyles.welcome}>
+               {<div className={cardStyles.welcome}>
 
-                    <h1>How many Gentlemen/Gentlewomen do we got there?</h1>
+                    <h3>How many Gentlemen/Gentlewomen do we got there?</h3>
                     {confirm ?
                         <div>
                             <h1>Time</h1>
@@ -19,34 +25,49 @@ export default function Card() {
 
                                 onChange={(e) => setTime(Number(e.target.value))}
                                 className={cardStyles.players}></input>
-
-                        </div> : <div style={{ width: 'fit-content', display:'flex', flexDirection:'column', alignItems:'center'}} >
-                            <div style={{ display: 'flex', flexDirection: 'row', gap:10 }}>
+                            <div className={cardStyles.playButton} onClick={() => setConfirm(false)}>Go Back</div>
+                        </div> : <div style={{ width: 'fit-content', display: 'flex', flexDirection: 'column', alignItems: 'center' }} >
+                            <div style={{ display: 'flex', flexDirection: 'row', gap: 10 }}>
                                 <div>
                                     <p>Players</p>
-                                <input type={'number'} min={3} max={99}
-                                onChange={(e) => setPlayers(Number(e.target.value))}
-                                className={cardStyles.players}></input>
+                                    <input type={'number'} min={3} max={99}
+                                        onChange={(e) => setPlayers(Number(e.target.value))}
+                                        className={cardStyles.players}></input>
                                 </div>
                                 <div>
-                                <p>Spies</p>
-                                <input type={'number'} min={1} max={99}
-                                    onChange={(e) => setSpies(Number(e.target.value))}
-                                    className={cardStyles.players}></input>
+                                    <p>Spies</p>
+                                    <input type={'number'} min={1} max={99}
+                                        onChange={(e) => setSpies(Number(e.target.value))}
+                                        className={cardStyles.players}></input>
                                 </div>
                             </div>
-                            <div className={cardStyles.playButton} onClick={() => setConfirm(true)}>Confirm</div>
+                            <div className={cardStyles.playButton} onClick={() => {
+                                setConfirm(true);
+                                dispatch(setPlayerInfo({
+                                    numberOfPlayers: players > 2 ? players : 3,
+                                    numberOfSpies: spies > 1 ? spies : 1
+                                }))
+                            }}>Confirm</div>
                         </div>}
                     {confirm ? <p style={{ fontSize: '15px' }} className={cardStyles.smallNote}>
-                        Small note: max number of time can't exceed 10 or go below 2
+                        Small note: max amount of time can't exceed 10 or go below 2
                     </p> : <p className={cardStyles.smallNote}>
                         Small note: max number of players can't exceed 99 or go below 3
                     </p>}
-                    <div className={cardStyles.playButton}>
-                        Start Game
-                    </div>
-                </div>
+                    {confirm ? <div className={cardStyles.playButton} onClick={() => {
+                        dispatch(setTimeDuration({
+                            timeDuration: time > 1 ? time : 2
+                        }));
+                        setGameStarted(true);
+                        dispatch(setGameProcess({
+                            started: true
+                        }))
 
+                    }}>
+                        Start Game
+                    </div> : ''}
+                </div>
+                }
 
             </div>
 

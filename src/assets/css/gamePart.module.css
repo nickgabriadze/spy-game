@@ -1,0 +1,19 @@
+.words{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: rgb(211, 113, 113);
+    align-items: center;
+    position: absolute;
+    top:50%;
+    left:50%;
+    translate: -50% -50%;
+    font-size: 40px;
+    font-family: 'Oxygen', 'sans-serif';
+    width: 50%;
+    height: 80%;
+    border: 1px solid red;
+    border-radius: 15px;
+    box-shadow: -1px 0 18px 18px rgba(158,51,30,0.9);
+}
