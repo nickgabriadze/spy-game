@@ -49,9 +49,9 @@ export default function Card() {
                                 }))
                             }}>Confirm</div>
                         </div>}
-                    {confirm ? <p style={{ fontSize: '15px' }} className={cardStyles.smallNote}>
+                    {confirm ? <p className={cardStyles.smallNote2}>
                         Small note: max amount of time can't exceed 10 or go below 2
-                    </p> : <p className={cardStyles.smallNote}>
+                    </p> : <p className={cardStyles.smallNote1}>
                         Small note: max number of players can't exceed 99 or go below 3
                     </p>}
                     {confirm ? <div className={cardStyles.playButton} onClick={() => {

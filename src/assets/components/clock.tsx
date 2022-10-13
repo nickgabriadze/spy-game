@@ -3,22 +3,11 @@ import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { setGameProcess } from '../store/gameInfoReducer';
 
-// const reducer = (state:{minutes: number, seconds: number}, action: { type: any; }) => {
-//     switch(action.type){
-//         case action.type == "MINUTE":
-//             return({
-//                 minutes: state.seconds == 0 ? state.minutes - 1: state.minutes,
-//                 seconds: state.seconds - 1
-//             })
-
-//     }   
-// }
 
 export function Clock() {
     const [over, setOver] = useState(false);
-    console.log(useAppSelector(state => state.gameReducer.gameStarted))
-    const [minutes, setMinutes] = useState(0);
-    const [seconds, setSeconds] = useState(10);
+    const [minutes, setMinutes] = useState(useAppSelector(state => state.gameReducer.timeDuration));
+    const [seconds, setSeconds] = useState(0);
     const dispatch = useAppDispatch();
 
   
