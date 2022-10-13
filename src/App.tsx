@@ -4,7 +4,7 @@ import { useAppSelector } from "./assets/hooks"
 
 function App() {
   const Game = useAppSelector(state => state.gameReducer.gameStarted);
-
+  
   return (
     <>
       {Game ? <GamePart /> : <Card />}
