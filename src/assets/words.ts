@@ -1,7 +1,7 @@
 export const words:string[] = [
     "Airport",
     "Home",
-    "Jupyter",
+    "Jupiter",
     "Earth",
     "Shopping Mall",
     "Rocketship",
@@ -15,7 +15,8 @@ export const words:string[] = [
     "Space Station",
     "Backpack",
     "Kindergarten",
-    "Google"
+    "Google",
+    "Home"
 ]
 
 export default words;

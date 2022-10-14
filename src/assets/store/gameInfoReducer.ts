@@ -28,7 +28,7 @@ export const gameInfoReducer = createSlice({
         setTimeDuration: (state, action) => {
             return({
                 ...state,
-                timeDuration: action.payload.timeDuration
+                timeDuration: action.payload.timeDuration > 10 ? 10: action.payload.timeDuration
             })
         },
         setGameProcess: (state, action) => {

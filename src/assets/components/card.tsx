@@ -15,7 +15,7 @@ export default function Card() {
             <div className={cardStyles.card}>
                {<div className={cardStyles.welcome}>
 
-                    <h3 style={{wordBreak: 'break-word'}}>how many players do we have here?</h3>
+                    {confirm ? <h3 style={{wordBreak: 'break-word'}}>What about the time?</h3>: <h3 style={{wordBreak: 'break-word'}}>how many players do we have here?</h3>}
                     {confirm ?
                         <div>
                             <h1>Time</h1>
