@@ -1,6 +1,5 @@
 import cardStyles from '../css/card.module.css';
 import { useState } from 'react';
-
 import { useAppDispatch } from '../store/store';
 import { setGameProcess, setPlayerInfo, setTimeDuration } from '../store/gameInfoReducer';
 
@@ -10,8 +9,7 @@ export default function Card() {
     const [confirm, setConfirm] = useState(false);
     const [players, setPlayers] = useState(3);
     const [spies, setSpies] = useState(1);
-    const [gameStarted, setGameStarted] = useState(false);
-    
+   
     return (
         <>
             <div className={cardStyles.card}>
@@ -58,7 +56,7 @@ export default function Card() {
                         dispatch(setTimeDuration({
                             timeDuration: time > 1 ? time : 2
                         }));
-                        setGameStarted(true);
+                       
                         dispatch(setGameProcess({
                             started: true
                         }))

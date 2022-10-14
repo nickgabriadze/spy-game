@@ -3,11 +3,8 @@ import gameStyles from '../css/gamePart.module.css';
 import generateArray from "../generateArray";
 import Clock from "./clock";
 import {motion} from 'framer-motion';
+import selectColor from "../selectColor";
 
-function selectColor(number: number) {
-    const hue = number * 137.508;
-    return `hsl(${hue},50%,75%)`;
-  }
 export default function GamePart() {
        
    

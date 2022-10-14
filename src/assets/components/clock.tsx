@@ -2,6 +2,7 @@ import timeStyles from '../css/timeStyles.module.css';
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { setGameProcess } from '../store/gameInfoReducer';
+import selectColor from '../selectColor';
 
 
 export function Clock() {
@@ -32,7 +33,7 @@ export function Clock() {
             <div className={timeStyles.time}>
 
 
-                <div className={timeStyles.minutes} style={{ color: minutes === 0 ? 'red' : '#159f9f' }}>
+                <div className={timeStyles.minutes} style={{ color: minutes === 0 ? 'red' : selectColor(seconds) }}>
                     {`${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`}</div>
                 {over ? <div className={timeStyles.restart} onClick={() => dispatch(setGameProcess({
                     started: false
