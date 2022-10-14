@@ -9,6 +9,13 @@ export const words:string[] = [
     "Eiffel Tower",
     "Cell Tower",
     "Balcony",
+    "School",
+    "Zoo",
+    "Cafe",
+    "Space Station",
+    "Backpack",
+    "Kindergarten",
+    "Google"
 ]
 
 export default words;

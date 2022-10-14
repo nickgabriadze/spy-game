@@ -13,6 +13,7 @@ export default function GamePart() {
    
     const [arrayPointer, setArrayPointer] = useState(0)
     const [arrayToPlayWith, setArrayToPlayWith] = useState(generateArray());
+  
     let opacity = {opacity: [0,0.5,0.8,1]}
 
     let boxShadow = {boxShadow: `-1px 0 18px 18px ${selectColor(arrayPointer)}`}
