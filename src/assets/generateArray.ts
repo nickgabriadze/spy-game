@@ -7,7 +7,7 @@ function generateArray(){
     const data = useAppSelector(state => state.gameReducer);
     let spies = data.numberOfSpies;
     if(data.numberOfSpies >= data.numberOfPlayers){
-        spies = Math.floor((data.numberOfPlayers * 20)/100);
+        spies = Math.ceil((data.numberOfPlayers * 20)/100);
     }
     
     const randomWord = words[Math.floor(Math.random() * (words.length))];
