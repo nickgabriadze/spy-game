@@ -53,11 +53,12 @@ input::-webkit-inner-spin-button {
 }
 
 .smallNote1{
-  
+    word-break: break-word;
     font-size: 20px;
 }
 .smallNote2{
     font-size: 16px;
+    word-break: break-word;
 }
 
 .playButton{

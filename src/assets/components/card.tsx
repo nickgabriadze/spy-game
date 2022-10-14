@@ -17,7 +17,7 @@ export default function Card() {
             <div className={cardStyles.card}>
                {<div className={cardStyles.welcome}>
 
-                    <h3>How many Gentlemen/Gentlewomen do we got there?</h3>
+                    <h3 style={{wordBreak: 'break-word'}}>how many players do we have here?</h3>
                     {confirm ?
                         <div>
                             <h1>Time</h1>
@@ -51,7 +51,7 @@ export default function Card() {
                         </div>}
                     {confirm ? <p className={cardStyles.smallNote2}>
                         Small note: max amount of time can't exceed 10 or go below 2
-                    </p> : <p className={cardStyles.smallNote1}>
+                    </p> : <p className={cardStyles.smallNote1} >
                         Small note: max number of players can't exceed 99 or go below 3
                     </p>}
                     {confirm ? <div className={cardStyles.playButton} onClick={() => {
