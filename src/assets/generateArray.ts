@@ -14,14 +14,21 @@ function generateArray(){
     let gameArray:string[] = [];
     
     for(let i = 0; i < data.numberOfPlayers; i++){
-        gameArray.push(randomWord);
+    
+            gameArray.push("Tap")
+            gameArray.push(randomWord);
+        
     }
-
-    for(let i = 0; i < spies; i++){
-        let randomIndex = Math.floor(Math.random()* gameArray.length);
-        gameArray[randomIndex] = 'Spy';
+    
+    while( spies > 0){
+        let randomIndex = Math.floor(Math.random() * gameArray.length);
+        if(randomIndex % 2 == 1){
+            gameArray[randomIndex] = "Spy"
+            spies--;
+        }
     }
-
+    gameArray.push("Start The Timer")
+  
     return gameArray;
 }
 
