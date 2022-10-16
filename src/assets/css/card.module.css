@@ -90,7 +90,7 @@ input::-webkit-inner-spin-button {
 .cardBox{
     width: 200px;
     height: 600px;
-    position: absolute; /*Can also be `fixed`*/
+    position: absolute; 
     left: 0;
     right: 0;
     top: 0;
