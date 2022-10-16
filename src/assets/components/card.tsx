@@ -12,6 +12,7 @@ export default function Card() {
    
     return (
         <>
+        <div className={cardStyles.cardBox}style={{display: 'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', gap:'40px',  margin: 'auto', width:'100%'}}>
             <div className={cardStyles.card}>
                {<div className={cardStyles.welcome}>
 
@@ -47,11 +48,7 @@ export default function Card() {
                                 }))
                             }}>Confirm</div>
                         </div>}
-                    {confirm ? <p className={cardStyles.smallNote2}>
-                        Small note: max amount of time can't exceed 10 or go below 2
-                    </p> : <p className={cardStyles.smallNote1} >
-                        Small note: max number of players can't exceed 99 or go below 3
-                    </p>}
+                    
                     {confirm ? <div className={cardStyles.playButton} onClick={() => {
                         dispatch(setTimeDuration({
                             timeDuration: time > 1 ? time : 2
@@ -66,9 +63,15 @@ export default function Card() {
                     </div> : ''}
                 </div>
                 }
-
+           
             </div>
-
+            <div className={cardStyles.welcomeNote}>{confirm ? <p className={cardStyles.smallNote2}>
+                        Small note: max amount of time can't exceed 10 or go below 2
+                    </p> : <p className={cardStyles.smallNote1} >
+                        Small note: max number of players can't exceed 99 or go below 3
+                    </p>}
+                    </div>
+                    </div>
         </>
     )
 }
