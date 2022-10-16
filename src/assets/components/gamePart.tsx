@@ -23,7 +23,8 @@ export default function GamePart() {
             <motion.div className={gameStyles.words} 
             style={boxShadow}
             onClick={() => setArrayPointer(arrayPointer + 1)}>
-                <motion.p whileTap={{scale: 0.8}} animate={opacity}>{arrayToPlayWith[arrayPointer]}</motion.p>
+                <motion.p whileTap={{scale: 0.8}}
+                style={{color: selectColor(arrayPointer)}} animate={opacity}>{arrayToPlayWith[arrayPointer]}</motion.p>
             </motion.div>}
         </>
     )

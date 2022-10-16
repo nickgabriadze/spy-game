@@ -35,11 +35,12 @@ export function Clock() {
 
                 <div className={timeStyles.minutes} style={{ color: minutes === 0 ? 'red' : selectColor(seconds) }}>
                     {`${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`}</div>
-                {over ? <div className={timeStyles.restart} onClick={() => dispatch(setGameProcess({
+                {over ? <div className={timeStyles.restart}
+                onClick={() => dispatch(setGameProcess({
                     started: false
-                }))}>Restart</div> :  <div className={timeStyles.restartEarly} style={{color: selectColor(seconds) }} onClick={() => dispatch(setGameProcess({
+                }))}>Restart</div> :  <div className={timeStyles.restartEarly} style={{color: selectColor(seconds), border: `1px solid ${selectColor(seconds)}` }} onClick={() => dispatch(setGameProcess({
                     started: false
-                }))}>Already guessed? Click to restart the game!</div>}
+                }))}>Already guessed? Click here to restart the game!</div>}
             </div>
         </>
     )
