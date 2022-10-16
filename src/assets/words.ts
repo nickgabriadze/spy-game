@@ -16,7 +16,27 @@ export const words:string[] = [
     "Backpack",
     "Kindergarten",
     "Google",
-    "Home"
+    "Home",
+    "Internet",
+    "Gas Station",
+    "USA",
+    "Apple(Fruit)",
+    "Video Player",
+    "T-Shirt",
+    "Wallet",
+    "Bridge",
+    "Theater",
+    "Sports Center",
+    "Gym",
+    "Clothing Store",
+    "Bakery",
+    "Library",
+    "Police Station",
+    "A Park",
+    "Subway",
+    "Church",
+    "Bus Stop",
+    "Museum"
 ]
 
 export default words;
