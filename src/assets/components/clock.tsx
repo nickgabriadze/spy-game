@@ -37,7 +37,9 @@ export function Clock() {
                     {`${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`}</div>
                 {over ? <div className={timeStyles.restart} onClick={() => dispatch(setGameProcess({
                     started: false
-                }))}>Restart</div> : ''}
+                }))}>Restart</div> :  <div className={timeStyles.restartEarly} style={{color: selectColor(seconds) }} onClick={() => dispatch(setGameProcess({
+                    started: false
+                }))}>Already guessed? Click to restart the game!</div>}
             </div>
         </>
     )
