@@ -40,7 +40,7 @@ export const words:string[] = [
     "Credit/Debit Card",
     "Toilet",
     "What? Where? When?",
-    "Mountains",
+    "Mountains"
 ]
 
 export default words;
