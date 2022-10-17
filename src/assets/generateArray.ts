@@ -9,15 +9,13 @@ function generateArray(){
     if(data.numberOfSpies >= data.numberOfPlayers){
         spies = Math.ceil((data.numberOfPlayers * 20)/100);
     }
-    
+   
     const randomWord = words[Math.floor(Math.random() * (words.length))];
     let gameArray:string[] = [];
     
     for(let i = 0; i < data.numberOfPlayers; i++){
-    
             gameArray.push("Tap")
             gameArray.push(randomWord);
-        
     }
     
     while( spies > 0){
@@ -28,7 +26,7 @@ function generateArray(){
         }
     }
     gameArray.push("Start The Timer")
-  
+    
     return gameArray;
 }
 
