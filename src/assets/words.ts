@@ -39,7 +39,8 @@ export const words:string[] = [
     "Museum",
     "Credit/Debit Card",
     "Toilet",
-    "What? Where? When?"
+    "What? Where? When?",
+    "Mountains",
 ]
 
 export default words;
